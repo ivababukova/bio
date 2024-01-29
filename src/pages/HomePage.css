@@ -1,0 +1,22 @@
+.HomePage {
+  text-align: left;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 30px;
+  color: #333;
+}
+
+h2 {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
