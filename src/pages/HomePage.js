@@ -1,6 +1,6 @@
 import React from "react";
 import './HomePage.css';
-import mushroomPhoto from '../mushrooms.jpeg';
+import profilePhoto from '../profilePhoto.png';
 
 const page_contents = [
   {
@@ -16,16 +16,16 @@ const page_contents = [
   },
   {
     "text": `
-      While at Biomage, I worked on projects for Harvard, where my most impactful 
-      contribution was Cellenics -- the most widely used open source web platform for
+      While at Biomage, I worked on projects at Harvard Medical School. My most impactful 
+      contribution there was Cellenics, which is currently the world's most widely used open source web platform for
       analysis of single cell sequencing data. I was the chief architect and technical 
-      team lead behind the project. While at Harvard, I also contributed to Vitessce.io -
-        an open source tool for exploring spatial single cell data.
+      team lead behind the project. In my role I also contributed to Vitessce.io -
+        an open source tool for exploring high-plex microscopy data.
     `,
     "links": {
       "Cellenics": "https://github.com/hms-dbmi-cellenics",
       "single cell sequencing": "https://en.wikipedia.org/wiki/Single-cell_sequencing#Single-cell_transcriptome_sequencing_(scRNA-seq)",
-      "Vitessce": "http://vitessce.io/",
+      "Vitessce.io": "http://vitessce.io/",
       "spatial single cell": "https://en.wikipedia.org/wiki/Spatial_transcriptomics"
     }
   },
@@ -43,7 +43,7 @@ const page_contents = [
     "text": `
       I hold a First Class MSci in Computer Science from the University of Glasgow. 
       My BSc and MSc final projects were both in the field of algorithmics and were supervised 
-      by Patrick Prosser and David Manlove. They focused on finding efficient algorithms using 
+      by Patrick Prosser and David Manlove. The projects focused on finding efficient algorithms using 
       constraint and integer programming for Traveller’s Problem and Subgraph Isomorphism.
     `,
     "links": {
@@ -56,7 +56,7 @@ const page_contents = [
     "text": `
       At the University of Glasgow, I co-founded Glasgow University Tech Society (GUTS). 
       We organized hackathons, which attracted hundreds of students from all around Scotland 
-      and major big tech companies in the area.
+      and tech companies local to the area.
     `,
     "links": {
       "Glasgow University Tech Society": "https://www.glasgowunisrc.org/organisation/8656/",
@@ -65,7 +65,7 @@ const page_contents = [
   },
   {
     "text": `
-      I like to read books and give talks from time to time.
+      I like to read books and sometimes I give talks.
     `,
     "links": {
       "give talks": "https://turingfest.com/videos/iva-babukova-can-open-source-cure-cancer/",
@@ -74,7 +74,7 @@ const page_contents = [
   },
   {
     "text": `
-      I am married to a scientist and entrepreneur Adam Kurkiewicz with whom I have a lovely daughter.
+      I am married to a scientist and entrepreneur Adam Kurkiewicz with whom I have a daughter.
     `,
     "links": {
       "Adam Kurkiewicz": "https://www.linkedin.com/in/adam-kurkiewicz-37393681/",
@@ -116,13 +116,13 @@ export default function HomePage() {
       <div className="container">
         <div className="box">
           <h1>Hi! <br/> I am Iva Babukova</h1>
-          <h2>I am a software engineer, team lead and entrepreneur. </h2>
+          <h2>I am a software engineer, team lead and entrepreneur</h2>
           {page_contents.map((paragraph, index) => (
             <p key={index} dangerouslySetInnerHTML={{ __html: getFormattedText(paragraph) }}></p>
           ))}
         </div>
         <div className="box">
-          <img src={mushroomPhoto} alt="My Mushroom Photo" />
+          <img src={profilePhoto} alt="My Profile Photo" />
         </div>
       </div>
     </div>
