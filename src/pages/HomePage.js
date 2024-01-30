@@ -1,7 +1,6 @@
 import React from "react";
 import './HomePage.css';
-
-const BLOCK_SIZE = 80;
+import mushroomPhoto from '../mushrooms.jpeg';
 
 const page_contents = [
   {
@@ -77,7 +76,9 @@ const page_contents = [
     "text": `
       I am married to a scientist and entrepreneur Adam Kurkiewicz with whom I have a lovely daughter.
     `,
-    "links": {}
+    "links": {
+      "Adam Kurkiewicz": "https://www.linkedin.com/in/adam-kurkiewicz-37393681/",
+    }
   },
   {
     "text": `
@@ -89,66 +90,41 @@ const page_contents = [
   }
 ]
 
-
 export default function HomePage() {
 
-  function insertNewLine(text) {
-    const words = text.split(/\s+/); // Split the text into words
-    const blocks = [];
-    let currentBlock = '';
-  
-    for (const word of words) {
-      if (currentBlock.length + 1 + word.length <= BLOCK_SIZE) {
-        // Add the word to the current block if it doesn't exceed the limit
-        currentBlock += (currentBlock.length > 0 ? ' ' : '') + word;
-      } else {
-        // If adding the word would exceed the limit, start a new block
-        blocks.push(currentBlock);
-        blocks.push("<br/>");
-        currentBlock = word;
-      }
-    }
-  
-    if (currentBlock.length > 0) {
-      // Add the last block if it's not empty
-      blocks.push(currentBlock);
-    }
-  
-    return blocks.join("");
-  }
-
   function insertLinks(text, links) {
-    const parts = text.split('<br/>');
   
-    const processedParts = parts.map((part) => {
-      let resultPart = part;
-      
-      for (const key in links) {
-        if (links.hasOwnProperty(key)) {
-          const linkValue = links[key];
-          const regex = new RegExp(key, 'g');
-          resultPart = resultPart.replace(regex, `<a href='${linkValue}'>${key}</a>`);
-        }
+    let resultPart = text;
+    
+    for (const key in links) {
+      if (links.hasOwnProperty(key)) {
+        const linkValue = links[key];
+        const regex = new RegExp(key, 'g');
+        resultPart = resultPart.replace(regex, `<a href='${linkValue}'>${key}</a>`);
       }
+    }
       
-      return resultPart;
-    });
-  
-    return processedParts.join('<br/>');
+    return resultPart;
   }
 
   function getFormattedText(paragraph) {
-    const textBlocks = insertNewLine(paragraph.text);
-    return insertLinks(textBlocks, paragraph.links);
+    return insertLinks(paragraph.text, paragraph.links);
   }
 
   return (
     <div className="HomePage">
-    <h1>Hi, I am Iva Babukova</h1>
-      <h2>I am a software engineer, team lead and entrepreneur. </h2>
-      {page_contents.map((paragraph, index) => (
-        <p key={index} dangerouslySetInnerHTML={{ __html: getFormattedText(paragraph) }}></p>
-      ))}
+      <div className="container">
+        <div className="box">
+          <h1>Hi! <br/> I am Iva Babukova</h1>
+          <h2>I am a software engineer, team lead and entrepreneur. </h2>
+          {page_contents.map((paragraph, index) => (
+            <p key={index} dangerouslySetInnerHTML={{ __html: getFormattedText(paragraph) }}></p>
+          ))}
+        </div>
+        <div className="box">
+          <img src={mushroomPhoto} alt="My Mushroom Photo" />
+        </div>
+      </div>
     </div>
   );
 }
