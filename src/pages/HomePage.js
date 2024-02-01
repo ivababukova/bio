@@ -112,18 +112,16 @@ export default function HomePage() {
   }
 
   return (
-    <div className="HomePage">
-      <div className="container">
-        <div className="box">
-          <h1>Hi! <br/> I am Iva Babukova</h1>
-          <h2>I am a software engineer, team lead and entrepreneur</h2>
-          {page_contents.map((paragraph, index) => (
-            <p key={index} dangerouslySetInnerHTML={{ __html: getFormattedText(paragraph) }}></p>
-          ))}
-        </div>
-        <div className="box">
-          <img src={profilePhoto} alt="My Profile Photo" />
-        </div>
+    <div className="container">
+      <div className="box-text">
+        <h1>Hi, I am Iva </h1>
+        <h2>I am a software engineer, team lead and entrepreneur</h2>
+        {page_contents.map((paragraph, index) => (
+          <p key={index} dangerouslySetInnerHTML={{ __html: getFormattedText(paragraph) }}></p>
+        ))}
+      </div>
+      <div className="box-image">
+        <img src={profilePhoto} alt="My Profile Photo" />
       </div>
     </div>
   );

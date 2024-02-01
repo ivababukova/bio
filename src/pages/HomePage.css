@@ -1,40 +1,47 @@
-.HomePage {
-  padding: 20px;
-  background-color: #faf0e6;
-}
-
 h1 {
   font-size: 30px;
-  /* color: #333; */
   margin-bottom: 30px;
 }
 
 h2 {
   font-size: 20px;
-  /* color: #444; */
   margin-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 p {
   font-size: 16px;
-  /* color: #666; */
   line-height: 1.5;
-  margin-bottom: 15px;
-  word-wrap: break-word;
-  max-width: 72ch;
+  margin-bottom: 25px;
+  /* word-wrap: break-word; */
+  /* max-width: 72ch; */
 }
 
 img {
-  float: right;
-  width: 500px; /* Set your desired width */
-  height: auto; /* Preserve aspect ratio */
-  margin-top: 80px;
+  width: 100%;
+  height: auto;
 }
 
 .container {
   display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  justify-content: center;
 }
 
-.box {
-  padding: 60px;
+@media screen and (max-width: 767px) {
+  .container {
+      flex-direction: column; /* Change flex direction to column for small screens */
+  }
+}
+
+.box-text {
+  flex: 1.25;
+  padding: 5px;
+}
+
+.box-image {
+  flex: 1;
+  flex-shrink: 3;
+  padding: 5px;
 }
