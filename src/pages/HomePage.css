@@ -13,13 +13,10 @@ p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 25px;
-  /* word-wrap: break-word; */
-  /* max-width: 72ch; */
 }
 
 img {
   width: 100%;
-  height: auto;
 }
 
 .container {
@@ -31,17 +28,15 @@ img {
 
 @media screen and (max-width: 767px) {
   .container {
-      flex-direction: column; /* Change flex direction to column for small screens */
+      flex-direction: column;
   }
 }
 
 .box-text {
-  flex: 1.25;
+  flex: 1.75;
   padding: 5px;
 }
 
 .box-image {
   flex: 1;
-  flex-shrink: 3;
-  padding: 5px;
 }

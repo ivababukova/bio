@@ -270,7 +270,6 @@ export default function HomePage() {
           {page_contents.map((paragraph, index) => (
             <p key={index} dangerouslySetInnerHTML={{ __html: getFormattedText(paragraph) }}></p>
           ))}
-          <Vega spec={spec} />
         </div>
         <div className="box-image">
           <img src={profilePhoto} alt="My Profile Photo" />
