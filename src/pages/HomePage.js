@@ -117,8 +117,8 @@ export default function HomePage() {
     <div>
       <div className="container">
         <div className="box-text">
-          <h1>Hi, I am Iva </h1>
-          <h2>I am a software engineer, team lead and entrepreneur</h2>
+          <h1>Hi, I'm Iva </h1>
+          <h2>I'm a software engineer, team lead and entrepreneur</h2>
           {page_contents.map((paragraph, index) => (
             <p key={index} dangerouslySetInnerHTML={{ __html: getFormattedText(paragraph) }}></p>
           ))}
