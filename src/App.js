@@ -5,8 +5,8 @@ import UserPage from './pages/UserPage'
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage/>} />
-      <Route path="/:id" element={<UserPage/>} />
+      <Route path="/:id" element={<HomePage/>} />
+      {/* <Route path="/:id" element={<UserPage/>} /> */}
     </Routes>
   );
 }
