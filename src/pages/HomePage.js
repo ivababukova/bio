@@ -4,10 +4,20 @@ import profilePhoto from '../profilePhotoResized.png';
 
 const metaTags = {
   title: "Iva Babukova - Software Engineer, Team Lead, Entrepreneur",
-  description: "Discover Iva Babukova's diverse experience as a software engineer, team lead, and entrepreneur. Iva is an exited founder. Explore her impactful projects in bioinformatics, web development, devops, engineering, building a team, running a company.",
+  description: "Discover Iva Babukova's experience as a software engineer, team lead, and entrepreneur. Explore her impactful projects in bioinformatics, web development, devops, engineering, building a team, running a company.",
   keywords: "Iva Babukova, software engineer, team lead, entrepreneur, bioinformatics, web development",
   author: "Iva Babukova",
   image: profilePhoto
+};
+
+const structuredData = {
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Iva Babukova",
+  "jobTitle": "Software Engineer, Team Lead, Entrepreneur",
+  "url": "https://ivababukova.github.io/bio/",
+  "image": "/build/static/media/profilePhotoResized.png",
+  "description": "Discover Iva Babukova's experience as a software engineer, team lead, and entrepreneur. Explore her impactful projects in bioinformatics, web development, devops, engineering, building a team, running a company.",
 };
 
 const page_contents = [
@@ -137,6 +147,7 @@ export default function HomePage() {
       <meta property="og:description" content={metaTags.description} />
       <meta property="og:image" content={metaTags.image} />
       <meta property="og:type" content="website" />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       <div className="container">
         <div className="box-text">
           <h1>Hi, I'm Iva </h1>
