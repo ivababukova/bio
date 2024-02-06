@@ -4,7 +4,7 @@ import profilePhoto from '../profilePhoto.png';
 
 const metaTags = {
   title: "Iva Babukova - Software Engineer, Team Lead, Entrepreneur",
-  description: "Iva Babukova is a software engineer, team lead, and entrepreneur. Learn about her experience and projects.",
+  description: "Discover Iva Babukova's diverse experience as a software engineer, team lead, and entrepreneur. Iva is an exited founder. Explore her impactful projects in bioinformatics, web development, devops, engineering, building a team, running a company.",
   keywords: "Iva Babukova, software engineer, team lead, entrepreneur, bioinformatics, web development",
   author: "Iva Babukova",
   image: profilePhoto
@@ -20,7 +20,8 @@ const page_contents = [
     "links": {
       "Biomage": "https://www.biomage.net/",
       "was acquired by Parse Biosciences": "https://www.businesswire.com/news/home/20240116719945/en/Parse-Biosciences-Acquires-Biomage"
-    }
+    },
+    "keywords": ["Biomage", "Parse Biosciences", "CTO", "cofounder", "Director of Cloud Computing", "bioinformatics", "single cell technology"]
   },
   {
     "text": `
@@ -35,7 +36,8 @@ const page_contents = [
       "single cell sequencing": "https://en.wikipedia.org/wiki/Single-cell_sequencing#Single-cell_transcriptome_sequencing_(scRNA-seq)",
       "Vitessce.io": "http://vitessce.io/",
       "spatial single cell": "https://en.wikipedia.org/wiki/Spatial_transcriptomics"
-    }
+    },
+    "keywords": ["Biomage", "Harvard Medical School", "Cellenics", "chief architect", "technical team lead", "Vitessce.io", "high-plex microscopy data"]
   },
   {
     "text": `
@@ -45,7 +47,8 @@ const page_contents = [
     `,
     "links": {
       "Skyscanner": "https://www.skyscanner.net/"
-    }
+    },
+    "keywords": ["Biomage", "Skyscanner", "full stack engineer", "CI/CD product", "AWS-based infrastructure"]
   },
   {
     "text": `
@@ -58,7 +61,8 @@ const page_contents = [
       "University of Glasgow": "https://www.gla.ac.uk/",
       "Patrick Prosser": "https://en.wikipedia.org/wiki/Patrick_Prosser",
       "David Manlove": "https://www.dcs.gla.ac.uk/~davidm/",
-    }
+    },
+    "keywords": ["University of Glasgow", "Computer Science", "algorithmics", "Patrick Prosser", "David Manlove", "Traveller’s Problem", "Subgraph Isomorphism"]
   },
   {
     "text": `
@@ -69,16 +73,14 @@ const page_contents = [
     "links": {
       "Glasgow University Tech Society": "https://www.glasgowunisrc.org/organisation/8656/",
       "hackathons": "https://en.wikipedia.org/wiki/Hackathon"
-    }
+    },
+    "keywords": ["University of Glasgow", "Glasgow University Tech Society", "GUTS", "hackathons"]
   },
   {
     "text": `
       I like to read books and sometimes I give talks.
     `,
-    "links": {
-      "give talks": "https://turingfest.com/videos/iva-babukova-can-open-source-cure-cancer/",
-      // "talks": "https://www.bio-itworldexpo.com/23/bioinformatics"
-    }
+    "keywords": ["read books", "give talks"]
   },
   {
     "text": `
@@ -86,7 +88,8 @@ const page_contents = [
     `,
     "links": {
       "Adam Kurkiewicz": "https://www.linkedin.com/in/adam-kurkiewicz-37393681/",
-    }
+    },
+    "keywords": ["Adam Kurkiewicz", "scientist", "entrepreneur"]
   },
   {
     "text": `
@@ -94,9 +97,10 @@ const page_contents = [
     `,
     "links": {
       "e-mail": "mailto:ibabukova@gmail.com"
-    }
+    },
+    "keywords": ["e-mail"]
   }
-]
+];
 
 
 export default function HomePage() {
@@ -117,7 +121,10 @@ export default function HomePage() {
   }
 
   function getFormattedText(paragraph) {
-    return insertLinks(paragraph.text, paragraph.links);
+    let formattedText = insertLinks(paragraph.text, paragraph.links);
+    const keywordsString = paragraph.keywords.join(',');
+    formattedText += `<span style="display:none" data-keywords="${keywordsString}"></span>`;
+    return formattedText;
   }
 
   return (
@@ -142,6 +149,6 @@ export default function HomePage() {
           <img src={profilePhoto} alt="My Profile Photo" />
         </div>
       </div>
-    </div>
+   </div>
   );
 }
