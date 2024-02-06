@@ -1,6 +1,6 @@
 import React from "react";
 import './HomePage.css';
-import profilePhoto from '../profilePhoto.png';
+import profilePhoto from '../profilePhotoResized.png';
 
 const metaTags = {
   title: "Iva Babukova - Software Engineer, Team Lead, Entrepreneur",
