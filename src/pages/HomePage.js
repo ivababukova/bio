@@ -2,6 +2,13 @@ import React from "react";
 import './HomePage.css';
 import profilePhoto from '../profilePhoto.png';
 
+const metaTags = {
+  title: "Iva Babukova - Software Engineer, Team Lead, Entrepreneur",
+  description: "Iva Babukova is a software engineer, team lead, and entrepreneur. Learn about her experience and projects.",
+  keywords: "Iva Babukova, software engineer, team lead, entrepreneur, bioinformatics, web development",
+  author: "Iva Babukova",
+  image: profilePhoto
+};
 
 const page_contents = [
   {
@@ -115,6 +122,14 @@ export default function HomePage() {
 
   return (
     <div>
+      <title>{metaTags.title}</title>
+      <meta name="description" content={metaTags.description} />
+      <meta name="keywords" content={metaTags.keywords} />
+      <meta name="author" content={metaTags.author} />
+      <meta property="og:title" content={metaTags.title} />
+      <meta property="og:description" content={metaTags.description} />
+      <meta property="og:image" content={metaTags.image} />
+      <meta property="og:type" content="website" />
       <div className="container">
         <div className="box-text">
           <h1>Hi, I'm Iva </h1>
