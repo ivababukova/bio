@@ -3,9 +3,9 @@ import './HomePage.css';
 import profilePhoto from '../profilePhotoResized.png';
 
 const metaTags = {
-  title: "Iva Babukova - Software Engineer, Team Lead, Entrepreneur",
+  title: "Iva Babukova - Software Engineer, Technical Founder and Team Lead",
   description: "Discover Iva Babukova's experience as a software engineer, team lead, and entrepreneur. Explore her impactful projects in bioinformatics, web development, devops, engineering, building a team, running a company.",
-  keywords: "Iva Babukova, software engineer, team lead, entrepreneur, bioinformatics, web development",
+  keywords: "Iva Babukova, software engineer, team lead, entrepreneur, bioinformatics, machine learning, web development",
   author: "Iva Babukova",
   image: profilePhoto
 };
@@ -23,9 +23,19 @@ const structuredData = {
 const page_contents = [
   {
     "text": `
+      I am currently working at Google, DeepMind as a Software Engineer. We are building a product to allow collection and processing of large amounts of video data. 
+      The product will perform automatic filtering and will prepare the data for further downstream research and model training. I am using state of the art Computer Vision AI models and video processing tools.
+
+    `,
+    "links": {
+    },
+    "keywords": ["AI", "Computer Vision", "CTO", "software engineer", "LLM", "DeepMind", "Google"]
+  },
+  {
+    "text": `
       I was the CTO and cofounder of Biomage, which was acquired by Parse Biosciences.
-      At Parse I am the Director of Cloud Computing, leading the cloud analysis team to
-      build bioinformatics software for data analysis with Parse’s single cell technology.
+      I worked for a year and 4 months at Parse, where I was the technical lead of the Cloud Analysis team. We integrated the software platform that I built while at Harvard with Parse's technologies and wrote a new data preprocessing module. 
+      This drastically reduced the analysis time (from 6 months to 2 weeks) and enabled the company to scale sales, removing its biggest bottleneck at the time (data analysis time). 
     `,
     "links": {
       "Biomage": "https://www.biomage.net/",
@@ -37,9 +47,9 @@ const page_contents = [
     "text": `
       While at Biomage, I worked on projects at Harvard Medical School. My most impactful 
       contribution there was Cellenics, which is currently the world's most widely used open source web platform for
-      analysis of single cell sequencing data. I was the chief architect and technical 
-      team lead behind the project. In my role I also contributed to Vitessce.io -
-        an open source tool for exploring high-plex microscopy data.
+      analysis of single cell sequencing data. I was the architect and developer of the platform and later became the technical 
+      team lead behind it.
+      I also contributed to Vitessce.io -  an open source tool for exploring high-plex microscopy data.
     `,
     "links": {
       "Cellenics": "https://github.com/hms-dbmi-cellenics",
@@ -152,6 +162,9 @@ export default function HomePage() {
         <div className="box-text">
           <h1>Hi, I'm Iva </h1>
           <h2>I'm a software engineer, team lead and entrepreneur</h2>
+          <p className="subtitle">
+            I have spent most of my career collaborating with researchers and engineers and building and scaling software solutions that solve important problems impacting people's lives.
+          </p>
           {page_contents.map((paragraph, index) => (
             <p key={index} dangerouslySetInnerHTML={{ __html: getFormattedText(paragraph) }}></p>
           ))}
